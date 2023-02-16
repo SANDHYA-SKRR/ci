@@ -55,3 +55,92 @@ selectedRows = 3;
 
   columns = [4, 5, 6];
 
+import { Injectable } from '@angular/core';
+
+import { Subject } from 'rxjs';
+
+@Injectable({
+
+  providedIn: 'root'
+
+})
+
+export class NotificationService {
+
+  private notificationSubject = new Subject<any>();
+
+  getNotification() {
+
+    return this.notificationSubject.asObservable();
+
+  }
+
+  sendNotification(message: any) {
+
+    this.notificationSubject.next(message);
+
+  }
+
+}
+
+import { Component } from '@angular/core';
+
+import { NotificationService } from 'path/to/notification.service';
+
+@Component({
+
+  selector: 'app-add-data',
+
+  template: `
+
+    <button (click)="addData()">Add Data</button>
+
+  `
+
+})
+
+export class AddDataComponent {
+
+  constructor(private notificationService: NotificationService) { }
+
+  addData() {
+
+    // add data logic here
+
+    this.notificationService.sendNotification('Data added successfully!');
+
+  }
+
+}
+
+import { Component } from '@angular/core';
+
+import { NotificationService } from 'path/to/notification.service';
+
+@Component({
+
+  selector: 'app-receive-notification',
+
+  template: `
+
+    <div *ngIf="notification">{{ notification }}</div>
+
+  `
+
+})
+
+export class ReceiveNotificationComponent {
+
+  notification: any;
+
+  constructor(private notificationService: NotificationService) {
+
+    this.notificationService.getNotification().subscribe((message) => {
+
+      this.notification = message;
+
+    });
+
+  }
+
+}
