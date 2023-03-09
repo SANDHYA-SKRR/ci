@@ -139,3 +139,10 @@ export class AppComponent implements OnInit {
 
 }
 
+
+Yesterday was a day that holds a special place in my heart. As a woman, it reminds me of all the amazing women who are mothers, sisters, friends, mentors, and everything in between. It feels very special and I wanted to take a moment to thank you for the wonderful self-defense class you conducted on Women's Day. The session was extremely informative and empowering, and I feel much more confident in my ability to protect myself in dangerous situations.
+
+Overall, I feel that the Women's Day celebration was a great success and a fitting tribute to the incredible women in our community. I feel that the self-defense class was a great investment of my time. Thank you again for organizing the wonderful event and helping us to feel safer and more empowered."
+
+- Sandhya Kothandaramaraja
+
